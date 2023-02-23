@@ -7,8 +7,6 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
-
-
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -57,7 +55,14 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 <script>
-
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if(!audio){
+      return;
+    }
+    audio.play();
+    console.log(audio);
+  });
 </script>
 
 
